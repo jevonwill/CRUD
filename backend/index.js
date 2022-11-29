@@ -17,3 +17,11 @@ app.use(bodyParser.urlencoded({extended:true}))
 app.listen(7000, ()=>{
     console.log("Connection successful!")
 })
+
+/* Connect to local DB*/
+const db = mysql.createPool({
+    host: "localhost",
+    user: "root",
+    password: "Password1",
+    database: "contact_database"
+})
