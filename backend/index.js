@@ -25,3 +25,15 @@ const db = mysql.createPool({
     password: "Password1",
     database: "contact_database"
 })
+
+/*GET API to request contact data */
+app.get("/getall", (req, res)=> {
+    const getAllContacts = "select * from contact_table";
+    db.query(getAllContacts, (err, result)=>{
+        if(!err){
+            res.send(result)
+        }else{
+            console.error(err)
+        }
+    })
+})
