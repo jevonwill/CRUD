@@ -23,7 +23,7 @@ const db = mysql.createPool({
     host: "localhost",
     user: "root",
     password: "Password1",
-    database: "contact_database"
+    database: "contact_db"
 })
 
 /*GET API to request contact data */
