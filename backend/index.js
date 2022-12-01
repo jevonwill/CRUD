@@ -73,7 +73,7 @@ app.put("/update/:id", (req, res)=> {
     const id = req.params.id
     const {name, email, phone} = req.body;
     const updateContact = "UPDATE contact_table SET name = ?, email = ?, phone = ? WHERE id ?";
-    db.query(updateContact, [id], (err, result)=> {
+    db.query(updateContact, [name, email, phone, id], (err, result)=> {
         if(!err){
            res.send("Successfully updated contact") 
         }else{
