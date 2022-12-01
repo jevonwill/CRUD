@@ -58,4 +58,11 @@ app.post("/add", (req, res)=> {
 app.get("/getOne/:id", (req, res)=> {
     const id = req.params.id
     const getContact = "select * from contact_table where id = ?";
+    db.query(getContact, [id], (err, result)=> {
+        if(!err){
+            res.send(result)
+        }else{
+            console.error(err)
+        }
+    })
 })
