@@ -29,7 +29,7 @@ const db = mysql.createPool({
 
 /*GET API to request contact data */
 app.get("/getall", (req, res)=> {
-    const getAllContacts = "select * from contact_table";
+    const getAllContacts = "SELECT * FROM contact_table";
     db.query(getAllContacts, (err, result)=>{
         if(!err){
             res.send(result)
@@ -43,7 +43,7 @@ app.get("/getall", (req, res)=> {
 
 app.post("/add", (req, res)=> {
     const {name, email, phone} = req.body;
-    const addQuery = "insert into contact_table (name, email, phone) values (?, ?, ?)"
+    const addQuery = "INSERT into contact_table (name, email, phone) VALUES (?, ?, ?)"
     db.query(addQuery, [name, email, phone], (err, result)=>{
         if(!err){
             res.send("Successfully added contact")
@@ -57,7 +57,7 @@ app.post("/add", (req, res)=> {
 
 app.get("/getOne/:id", (req, res)=> {
     const id = req.params.id
-    const getContact = "select * from contact_table where id = ?";
+    const getContact = "SELECT * FROM contact_table where id = ?";
     db.query(getContact, [id], (err, result)=> {
         if(!err){
             res.send(result)
@@ -71,10 +71,13 @@ app.get("/getOne/:id", (req, res)=> {
 
 app.put("/update/:id", (req, res)=> {
     const id = req.params.id
-    const updateContact = " ";
+    const {name, email, phone} = req.body;
+    const updateContact = "UPDATE contact_table SET name = ?, email = ?, phone = ? WHERE id ?";
     db.query(updateContact, [id], (err, result)=> {
         if(!err){
-            
+           res.send("Successfully updated contact") 
+        }else{
+            console.error(err)
         }
     })
 })
