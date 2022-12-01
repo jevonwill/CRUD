@@ -62,7 +62,19 @@ app.get("/getOne/:id", (req, res)=> {
         if(!err){
             res.send(result)
         }else{
-            console.error(err)
+            res.send("User not found")
+        }
+    })
+})
+
+/* API to update single contact */
+
+app.put("/update/:id", (req, res)=> {
+    const id = req.params.id
+    const updateContact = " ";
+    db.query(updateContact, [id], (err, result)=> {
+        if(!err){
+            
         }
     })
 })
