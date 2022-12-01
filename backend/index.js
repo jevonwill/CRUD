@@ -81,3 +81,18 @@ app.put("/update/:id", (req, res)=> {
         }
     })
 })
+
+
+/* API to delete contact  */
+
+app.delete("/delete/:id", (req, res)=> {
+    const id = req.params.id
+    const deleteContact = "DELETE FROM contact_table WHERE id = ?";
+    db.query(deleteContact, [id], (err, result)=> {
+        if(!err){
+            res.send(result)
+        }else{
+            console.error(err)
+        }
+    })
+})
