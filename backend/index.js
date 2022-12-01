@@ -52,3 +52,10 @@ app.post("/add", (req, res)=> {
         }
     })
 })
+
+/*API to retrieve single contact by uniq ID */
+
+app.get("/getOne/:id", (req, res)=> {
+    const id = req.params.id
+    const getContact = "select * from contact_table where id = ?";
+})
