@@ -46,7 +46,7 @@ app.post("/add", (req, res)=> {
     const addQuery = "insert into contact_table (name, email, phone) values (?, ?, ?)"
     db.query(addQuery, [name, email, phone], (err, result)=>{
         if(!err){
-            res.send("Contact added")
+            res.send("Successfully added contact")
         }else{
             console.error(err)
         }
