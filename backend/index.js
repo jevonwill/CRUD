@@ -37,3 +37,13 @@ app.get("/getall", (req, res)=> {
         }
     })
 })
+
+/* API to add contact */
+
+app.post("/add", (req, res)=> {
+    const {name, email, phone} = req.body;
+    const addQuery = "insert into contact_table (name, email, phone) values (?, ?, ?)"
+    db.query(addQuery, [name, email, phone], (err, result)=>{
+        
+    })
+})
