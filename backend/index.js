@@ -4,6 +4,7 @@ const express = require("express")
 const cors = require("cors")
 const bodyParser = require("body-parser")
 const mysql = require("mysql2")
+const e = require("express")
 
 /* Create app object in express */
 const app = express()
@@ -44,6 +45,10 @@ app.post("/add", (req, res)=> {
     const {name, email, phone} = req.body;
     const addQuery = "insert into contact_table (name, email, phone) values (?, ?, ?)"
     db.query(addQuery, [name, email, phone], (err, result)=>{
-        
+        if(!err){
+            res.send("Contact added")
+        }else{
+            console.error(err)
+        }
     })
 })
