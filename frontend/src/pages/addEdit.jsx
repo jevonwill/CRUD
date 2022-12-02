@@ -1,9 +1,9 @@
 import React from 'react'
 
-const addEdit = () => {
+const AddEdit = () => {
   return (
     <div>addEdit</div>
   )
 }
 
-export default addEdit
+export default AddEdit

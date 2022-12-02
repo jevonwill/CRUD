@@ -1,11 +1,11 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify'
 import './App.css';
-import './pages/home';
-import './pages/addEdit';
-import './pages/view';
-import home from './pages/home';
+import './pages/Home';
+import './pages/AddEdit';
+import './pages/View';
+import Home from './pages/Home.jsx'
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
        <div className="App">
           <ToastContainer position='top-center'/>
           <Routes>
-            <Route path='/' element={<home/>}/>
+            <Route path='/' element={<Home/>}/>
           </Routes>
       </div>
     </BrowserRouter>
