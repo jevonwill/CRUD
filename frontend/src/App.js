@@ -1,12 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify'
 import './App.css';
+import './pages/home';
+import './pages/addEdit';
+import './pages/view';
 
 function App() {
   return (
-    <div className="App">
+    <BrowserRouter>
+       <div className="App">
       
-    </div>
+      </div>
+    </BrowserRouter>
   );
 }
 
