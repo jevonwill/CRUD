@@ -6,7 +6,24 @@ import {toast} from 'react-toastify'
 
 const Home = () => {
   return (
-    <div>home</div>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>S/N</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr key="">
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
   )
 }
 
