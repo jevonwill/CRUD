@@ -13,7 +13,10 @@ const Home = () => {
         console.log(response);
     }
 
-    
+    useEffect( ()=> {
+        getAllData()
+    }, []);
+
   return (
     <div>
         <table>
