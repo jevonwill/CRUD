@@ -8,7 +8,7 @@ const Home = () => {
     const [contacts, setContacts] = useState([]);
 
     const getAllData = async() => {
-        const response = await axios.get("localhost:7000/getall");
+        const response = await axios.get("http://localhost:7000/getall");
         setContacts(response.data);
         console.log(response);
     }
