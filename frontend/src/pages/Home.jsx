@@ -38,8 +38,8 @@ const Home = () => {
                         <td>{contact.phone}</td>
 
                         <td>
-                            <Link to {`edit/${contact.id}`} ><button>Edit</button></Link>
-                            <Link to {`view/${contact.id}`}><button>View</button></Link>
+                            <Link to = {`edit/${contact.id}`} ><button>Edit</button></Link>
+                            <Link to = {`view/${contact.id}`}><button>View</button></Link>
                             <button onClick={()=>deleteCOntact(contact.id)}>Delete</button>
                         </td>
                     </tr>)
