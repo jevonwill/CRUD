@@ -30,9 +30,14 @@ const Home = () => {
                 </tr>
             </thead>
             <tbody>
-                <tr key="">
-                    
-                </tr>
+                {contacts.map((contacts, index)=> {
+                    return(<tr>
+                        <td>{index}</td>
+                        <td>{contact.name}</td>
+                        <td>{contact.email}</td>
+                        <td>{contact.phone}</td>
+                    </tr>)
+                })}
             </tbody>
         </table>
     </div>
