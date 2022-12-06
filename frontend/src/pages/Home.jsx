@@ -30,7 +30,7 @@ const Home = () => {
                 </tr>
             </thead>
             <tbody>
-                {contacts.map((contacts, index)=> {
+                {contacts.map((contact, index)=> {
                     return(<tr>
                         <td>{index}</td>
                         <td>{contact.name}</td>
