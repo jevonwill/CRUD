@@ -5,8 +5,10 @@ import {toast} from 'react-toastify'
 
 
 const Home = () => {
+    /*Hook to store our data from DB  */
     const [contacts, setContacts] = useState([]);
 
+    /*Method to get all data using Axios  */
     const getAllData = async() => {
         const response = await axios.get("http://localhost:7000/getall");
         setContacts(response.data);
@@ -18,7 +20,7 @@ const Home = () => {
     }, []);
 
     const deleteContact = (id) =>{
-        
+
     }
 
   return (
@@ -42,9 +44,9 @@ const Home = () => {
                         <td>{contact.phone}</td>
 
                         <td>
-                            <Link to = {`edit/${contact.id}`} ><button>Edit</button></Link>
-                            <Link to = {`view/${contact.id}`}><button>View</button></Link>
-                            <button onClick={()=>deleteContact(contact.id)}>Delete</button>
+                            <Link to = {`edit/${contact.id}`} ><button className='edit'>Edit</button></Link>
+                            <Link to = {`view/${contact.id}`}><button className='view'>View</button></Link>
+                            <button className='delete' onClick={()=>deleteContact(contact.id)}>Delete</button>
                         </td>
                     </tr>)
                 })}

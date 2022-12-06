@@ -6,6 +6,8 @@ import './pages/Home';
 import './pages/AddEdit';
 import './pages/View';
 import Home from './pages/Home.jsx'
+import AddEdit from './pages/AddEdit';
+import View from './pages/View';
 
 function App() {
   return (
@@ -14,6 +16,9 @@ function App() {
           <ToastContainer position='top-center'/>
           <Routes>
             <Route path='/' element={<Home/>}/>
+            <Route path='/edit/:id' element={<AddEdit/>}/>
+            <Route path='view' element={<View/>}/>
+            <Route path='add' element={<AddEdit/>}/>
           </Routes>
       </div>
     </BrowserRouter>
