@@ -21,7 +21,7 @@ app.listen(7000, ()=>{
 
 /* Connect to local DB*/
 const db = mysql.createPool({
-    host: "localhost",
+    host: "database-1.c9s1p19qe3kx.us-east-1.rds.amazonaws.com",
     user: "root",
     password: "Password1",
     database: "contact_db"
