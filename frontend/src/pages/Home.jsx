@@ -21,7 +21,11 @@ const Home = () => {
 
     const deleteContact = (id) =>{
         if(window.confirm("Do you want delete this contact?")){
-            axios.delete(`http://localhost:7000/delete/${id}`).then.().catch(err=>{console.log(err)})
+            axios.delete(`http://localhost:7000/delete/${id}`).then.(()=>{
+                setTimeout(()=>{
+                    getAllData()
+                }, 500)
+            }).catch(err=>{console.log(err)})
         }
     }
 
